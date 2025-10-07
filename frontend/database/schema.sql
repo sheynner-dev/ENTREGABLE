@@ -31,9 +31,15 @@ CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` text DEFAULT NULL,
+  `active_ingredient` varchar(255) DEFAULT NULL,
+  `dosage` varchar(100) DEFAULT NULL,
   `price` decimal(10,2) NOT NULL,
   `stock` int(11) NOT NULL DEFAULT 0,
   `min_stock` int(11) NOT NULL DEFAULT 10,
+  `expiration_date` date DEFAULT NULL,
+  `requires_prescription` tinyint(1) DEFAULT 0,
+  `category` varchar(100) DEFAULT 'General',
+  `manufacturer` varchar(255) DEFAULT NULL,
   `latitude` decimal(10,8) DEFAULT NULL,
   `longitude` decimal(11,8) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -44,10 +50,12 @@ CREATE TABLE `products` (
 -- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `description`, `price`, `stock`, `min_stock`, `latitude`, `longitude`, `created_at`, `updated_at`) VALUES
-(1, 'Laptop HP', 'Laptop HP 15.6 pulgadas', 850.00, 15, 5, 40.71280000, -74.00600000, '2025-10-06 22:34:21', '2025-10-06 22:34:21'),
-(2, 'Mouse Logitech', 'Mouse inalámbrico', 25.50, 3, 10, 40.71280000, -74.00600000, '2025-10-06 22:34:21', '2025-10-06 22:34:21'),
-(3, 'Teclado Mecánico', 'Teclado RGB mecánico', 120.00, 8, 5, 40.71280000, -74.00600000, '2025-10-06 22:34:21', '2025-10-06 22:34:21');
+INSERT INTO `products` (`id`, `name`, `description`, `active_ingredient`, `dosage`, `price`, `stock`, `min_stock`, `expiration_date`, `requires_prescription`, `category`, `manufacturer`, `latitude`, `longitude`, `created_at`, `updated_at`) VALUES
+(1, 'Paracetamol', 'Analgésico y antipirético', 'Paracetamol', '500mg', 5.50, 150, 30, '2026-05-15', 0, 'Analgésicos', 'Laboratorios Pharma', 40.71280000, -74.00600000, '2025-10-06 22:34:21', '2025-10-06 22:34:21'),
+(2, 'Amoxicilina', 'Antibiótico de amplio espectro', 'Amoxicilina', '500mg', 12.75, 80, 20, '2026-03-10', 1, 'Antibióticos', 'MediLab', 40.71280000, -74.00600000, '2025-10-06 22:34:21', '2025-10-06 22:34:21'),
+(3, 'Ibuprofeno', 'Antiinflamatorio no esteroideo', 'Ibuprofeno', '400mg', 7.25, 120, 25, '2026-08-22', 0, 'Antiinflamatorios', 'Farmacéutica Global', 40.71280000, -74.00600000, '2025-10-06 22:34:21', '2025-10-06 22:34:21'),
+(4, 'Loratadina', 'Antihistamínico', 'Loratadina', '10mg', 8.90, 95, 20, '2026-06-30', 0, 'Antialérgicos', 'Laboratorios Pharma', 40.71280000, -74.00600000, '2025-10-06 22:34:21', '2025-10-06 22:34:21'),
+(5, 'Omeprazol', 'Inhibidor de la bomba de protones', 'Omeprazol', '20mg', 9.50, 75, 15, '2026-04-18', 0, 'Gastrointestinales', 'MediLab', 40.71280000, -74.00600000, '2025-10-06 22:34:21', '2025-10-06 22:34:21');
 
 --
 -- Índices para tablas volcadas

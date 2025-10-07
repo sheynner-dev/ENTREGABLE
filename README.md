@@ -34,9 +34,9 @@ SitioInventario/
 
 ## Requisitos Previos
 
-- Node.js (v14 o superior)
+- Node.js (v22.14.0 o superior)
 - XAMPP (para MySQL)
-- NPM (v6 o superior)
+- NPM (10.9.2 o superior)
 
 ## Instalación
 

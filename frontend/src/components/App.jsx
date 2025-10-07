@@ -1,3 +1,5 @@
+//Archivo React Principal de la Aplicacións
+
 import React, { useState } from 'react';
 import Dashboard from './Dashboard';
 import Products from './Products';
@@ -27,6 +29,7 @@ function App() {
         </div>
       </nav>
 
+      {/* Rutas del React principal */}
       <main className="content">
         {activeView === 'dashboard' && <Dashboard />}
         {activeView === 'products' && <Products />}
